@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>News Website</title>
+    <style>
+      body {
+        background-color: white;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        background-color: white;
+        color: white;
+      }
+      h1 {
+        font-size: 24px;
+        margin-bottom: 8px;
+        color: dodgerblue;
+        font-weight: 500;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 16px;
+      }
+      .flex {
+        display: flex;
+        justify-content: space-between;
+        padding: 16px;
+      }
+      .navbar-flex {
+        display: flex;
+        justify-content: space-between;
+      }
+      .navbar-sub {
+        display: flex;
+        justify-content: space-between;
+        padding: 16px;
+        align-items: center;
+      }
+      .search-bar-container {
+        justify-content: space-between;
+        align-items: center;
+      }
+      .search-bar {
+        display: flex;
+        height: fit-content;
+        align-items: center;
+        border: 2px solid #ccc;
+        padding: 8px;
+        border-radius: 4px;
+        width: 50%;
+      }
+      .search-bar input {
+        width: 100%;
+        border: none;
+        outline: none;
+        padding-left: 8px;
+        color: #333;
+      }
+      .menu-button {
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+      }
+      .navbar {
+        background-color: #319795;
+        padding: 0;
+        height: fit-content;
+        align-items: center;
+        justify-content: center;
+      }
+      .navbar button {
+        padding: 16px;
+        color: white;
+        background: none;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      .navbar button:hover {
+        background-color: #2c7a7b;
+      }
+      .hashtag {
+        height: fit-content;
+        padding: 4px 12px;
+        border: 2px solid white;
+        border-radius: 9999px;
+        color: white;
+        margin-left: 16px;
+      }
+      section {
+        width: 66.66%;
+      }
+      .featured-image {
+        margin-bottom: 16px;
+      }
+      .featured-image img {
+        width: 100%;
+        border-radius: 8px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 16px;
+        border-bottom: 1px solid #ccc;
+      }
+      .card {
+        background-color: white;
+        border-radius: 8px;
+      }
+      .card img {
+        width: 100%;
+        border-radius: 8px;
+      }
+      .main-section {
+        border-radius: 8px;
+      }
+      .main-section ul {
+        list-style: none;
+        padding: 0;
+      }
+      .main-section li {
+        display: flex;
+        padding: 8px;
+        border-bottom: 1px solid #ccc;
+      }
+      .main-section img {
+        margin-right: 12px;
+        width: 200px;
+        height: auto;
+        border-radius: 8px;
+      }
+      .main-section div {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .main-section p {
+        margin: 0;
+      }
+      aside {
+        flex: 0.9;
+      }
+      .sidebar-section {
+        border-radius: 8px;
+      }
+      .sidebar-section ul {
+        list-style: none;
+        padding: 0;
+      }
+      .sidebar-section li {
+        display: flex;
+        padding: 8px;
+        border-bottom: 1px solid #ccc;
+        align-items: center;
+      }
+      .sidebar-section img {
+        margin-right: 12px;
+        width: 64px;
+        height: 64px;
+      }
+      .news-subtitle {
+        font-size: 14px;
+        font-weight: 400;
+        color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container flex search-bar-container">
+        <img src="/assets/bm-logo.png" width="180" height="auto" />
+        <div class="search-bar">
+          <input type="text" placeholder="Nhập nội dung tìm kiếm" />
+          <img src="/assets/search-svgrepo-com.svg" width="20" height="20" />
+        </div>
+        <div class="flex gap-x-1">
+          <button class="menu-button">
+            <img
+              src="/assets/account-user-avatar-svgrepo-com.svg"
+              width="24"
+              height="24"
+            />
+          </button>
+          <button class="menu-button">
+            <img
+              src="/assets/menu-navigation-grid-1528-svgrepo-com.svg"
+              width="24"
+              height="24"
+            />
+          </button>
+        </div>
+      </div>
+      <nav class="navbar">
+        <div class="navbar-flex">
+          <div class="navbar-sub">
+            <button>NÓNG</button>
+            <button>MỚI</button>
+            <button>VIDEO</button>
+            <button>CHỦ ĐỀ</button>
+            <div class="hashtag"># Năng lượng tích cực</div>
+            <div class="hashtag"># Khám phá Việt Nam</div>
+            <div class="hashtag"># Khám phá Thế Giới</div>
+          </div>
+          <button class="menu-button">
+            <img src="/assets/menu-svgrepo-com.svg" width="24" height="24" />
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container flex">
+      <!-- Main News Section -->
+      <section>
+        <div class="featured-image">
+          <img src="/assets/image-1.jpg" alt="Featured News" />
+          <h1>
+            "Rốn lũ" Tân Hóa ngập tới 2m, hàng trăm hộ dân lên nhà phao tránh
+            trú
+          </h1>
+        </div>
+
+        <!-- Additional News Articles -->
+        <div class="grid">
+          <!-- Article 1 -->
+          <div class="card">
+            <img
+              src="https://photo-baomoi.bmcdn.me/w250_r3x2/2024_09_20_8_50234180/cc50b72f0960e03eb971.jpg.webp"
+              alt="Article 1"
+            />
+            <h4>
+              Thống nhất phương án trình Chính phủ lịch nghỉ lễ, Tết năm 2025
+            </h4>
+            <p class="news-subtitle">8 phút 3 liên quan</p>
+          </div>
+
+          <!-- Article 2 -->
+          <div class="card">
+            <img
+              src="https://photo-baomoi.bmcdn.me/w250_r3x2/2024_09_20_294_50232071/ca3b4aadf4e21dbc44f3.jpg.webp"
+              alt="Article 2"
+            />
+            <h4>Buổi vân động tranh cử đặc biệt của bà Kamala Harris</h4>
+            <p class="news-subtitle">8 phút 3 liên quan</p>
+          </div>
+
+          <!-- Article 3 -->
+          <div class="card">
+            <img
+              src="https://photo-baomoi.bmcdn.me/w250_r3x2/2024_09_20_23_50232357/7db3c52f7b60923ecb71.jpg.webp"
+              alt="Article 3"
+            />
+            <h4>Đua cứu đòi cứu vật chất do Phong Châu bị ngập</h4>
+            <p class="news-subtitle">8 phút 3 liên quan</p>
+          </div>
+        </div>
+        <div class="main-section">
+          <ul>
+            <li>
+              <img
+                src="https://photo-baomoi.bmcdn.me/w250_r3x2/2024_09_20_20_50228957/2f1333b08dff64a13dee.jpg.webp"
+                alt=""
+              />
+              <div>
+                <p>
+                  Kê biên, thu giữ bộ sưu tập đồng hồ xa xỉ và khối tài sản
+                  'khủng' của cựu Bí thư Tỉnh ủy Bến Tre
+                </p>
+                <p class="news-subtitle">1900 liên quan</p>
+              </div>
+            </li>
+            <li>
+              <img
+                src="https://photo-baomoi.bmcdn.me/w250_r3x2/2024_09_20_119_50231967/a345c2d17c9e95c0cc8f.jpg.webp"
+                alt=""
+              />
+              <div>
+                <p>Đội bóng vô danh viết lịch sử ở Champions League</p>
+                <p class="news-subtitle">8 phút 3 liên quan</p>
+              </div>
+            </li>
+            <li>
+              <img
+                src="https://photo-baomoi.bmcdn.me/w250_r3x2/2024_09_20_20_50232167/9620b9060049e917b058.jpg.webp"
+                alt=""
+              />
+              <div>
+                <p>'Lộc biển' dạt trắng bờ, dân ra nhặt từng tải về ăn</p>
+                <p class="news-subtitle">8 phút 3 liên quan</p>
+              </div>
+            </li>
+            <li>
+              <img
+                src="https://photo-baomoi.bmcdn.me/w250_r3x2/2024_09_20_294_50232490/27f9769bc8d4218a78c5.jpg.webp"
+                alt=""
+              />
+              <div>
+                <p>
+                  Nỗi đau từ vụ lở đất kinh hoàng ở Lũng Lỳ, Lũng Súng ở Cao
+                  Bằng
+                </p>
+                <p class="news-subtitle">7 phút 4 liên quan</p>
+              </div>
+            </li>
+            <li>
+              <img
+                src="https://photo-baomoi.bmcdn.me/w250_r3x2/2024_09_20_65_50231583/ed9acd1773589a06c349.jpg.webp"
+                alt=""
+              />
+              <div>
+                <p>
+                  Những điểm đáng chú ý tại tuần lễ cấp cao Đại hội đồng Liên
+                  Hợp Quốc khóa 79
+                </p>
+                <p class="news-subtitle">vài giây 6 liên quan</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Sidebar Section -->
+      <aside>
+        <!-- Trending News -->
+        <div class="sidebar-section">
+          <ul>
+            <li>
+              <img
+                src="https://photo-baomoi.bmcdn.me/w250_r3x2/2024_09_19_20_50222612/628f3f8782c86b9632d9.jpg.webp"
+                alt=""
+              />
+              <div>
+                <p>
+                  Tổng Bí thư, Chủ tịch nước Tô Lâm sắp có chuyến công tác ở Mỹ,
+                  thăm cấp Nhà nước Cuba
+                </p>
+                <p class="news-subtitle">1900 liên quan</p>
+              </div>
+            </li>
+            <li>
+              <img
+                src="https://photo-baomoi.bmcdn.me/w250_r3x2/2024_09_20_3_50232723/054ef92d4762ae3cf773.jpg.webp"
+                alt=""
+              />
+              <div>
+                <p>
+                  Bứt phá cùng chuyển đổi số, ngành tài chính còn gặp không ít
+                  thách thức
+                </p>
+                <p class="news-subtitle">8 phút 3 liên quan</p>
+              </div>
+            </li>
+            <li>
+              <img
+                src="https://photo-baomoi.bmcdn.me/w250_r3x2/2024_09_20_114_50232762/56c825689c2775792c36.jpg.webp"
+                alt=""
+              />
+              <div>
+                <p>
+                  Rác dạt vào biển Đà Nẵng sau bão số 4, huy động 100 công nhân
+                  đi dọn
+                </p>
+                <p class="news-subtitle">8 phút 3 liên quan</p>
+              </div>
+            </li>
+            <li>
+              <img
+                src="https://photo-baomoi.bmcdn.me/w250_r3x2/2024_09_20_106_50232732/3c0325679b2872762b39.jpg.webp"
+                alt=""
+              />
+              <div>
+                <p>
+                  Chuyên gia lên tiếng về đám mây màu đỏ trên bầu trời Lào Cai
+                </p>
+                <p class="news-subtitle">7 phút 4 liên quan</p>
+              </div>
+            </li>
+            <li>
+              <img
+                src="https://photo-baomoi.bmcdn.me/w250_r3x2/2024_09_20_106_50232787/20e021859fca76942fdb.jpg.webp"
+                alt=""
+              />
+              <div>
+                <p>Vòng 5 Premier League: Man City đại chiến Arsenal</p>
+                <p class="news-subtitle">vài giây 6 liên quan</p>
+              </div>
+            </li>
+            <li>
+              <img
+                src="https://photo-baomoi.bmcdn.me/w250_r3x2/2024_09_20_106_50232733/da8ecdea73a59afbc3b4.jpg.webp"
+                alt=""
+              />
+              <div>
+                <p>
+                  Trang bị kỹ năng về an toàn cháy nổ cho học sinh đầu năm học
+                  mới
+                </p>
+                <p class="news-subtitle">7 phút 2 liên quan</p>
+              </div>
+            </li>
+            <li>
+              <img
+                src="https://photo-baomoi.bmcdn.me/w250_r3x2/2024_09_20_83_50232719/6a7dbb1e0551ec0fb540.jpg.webp"
+                alt=""
+              />
+              <div>
+                <p>
+                  Sau Miss Universe Vietnam 2024, Thanh Hằng đảm nhận ngay vai
+                  trò mới
+                </p>
+                <p class="news-subtitle">9 phút 289 liên quan</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </body>
+</html>
